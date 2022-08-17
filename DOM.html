@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+
+
+       /* button styling */
+            #btn{
+            width: 14%;
+            height: 20px;
+            background-color: blanchedalmond;
+        }
+        /* p styling */
+        p{
+            border: 1px solid black;
+            width: 50%;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- heading    -->
+<h2>JavaScript addEventListener()</h2>
+<!-- button -->
+<button type="button" id="btn">Try it</button>
+<!--  three pera box -->
+<p class="first"></p>
+<p class="second"></p> 
+<p class="third"> </p>  
+   
+
+<script>
+
+
+var button = document.getElementById("btn");
+var one = document.querySelector(".first");
+var two = document.querySelector(".second");
+var three = document.querySelector(".third");
+
+button.addEventListener("click",ClickFunction);
+button.addEventListener("mouseover",MouseoverFunction);
+button.addEventListener("mouseout",MouseoutFunction);
+
+
+
+// 0 value store in count
+count = 0
+function ClickFunction(){
+    // count-value= 0+1,1+1,2+1,3+1.........   , count += 1 
+    count  += 1;  
+    if(count == 15){
+ 
+     document.getElementById("btn").disabled = true;
+     alert("Click limit is over")
+    one.innerHTML = " you  clicked 15 times ! sorry refreh the page  "
+     
+
+    }
+    else{
+        one.innerHTML = " A few Second , You Cliked on the button "  +   count   + " time " ;
+    }
+  
+        
+   
+}
+function MouseoverFunction(){
+
+    two.innerHTML = "  You are overing on the button";
+    three.innerHTML = " "
+    
+
+}
+
+function MouseoutFunction(){
+
+
+  three.innerHTML = " A few Second ago, you out on the button ";
+  two.innerHTML = ""
+  
+
+}
+
+
+</script>
+
+
+
+</body>
+</html>
